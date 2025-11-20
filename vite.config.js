@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/LR_Dashboard/',  // important for GitHub Pages
+  base: '/',   // root for Render (and local dev)
 })
