@@ -1,0 +1,63 @@
+/* Base layout comes from App.css (.charts-section, .chart-card, .chart-container) */
+
+.chart-container.small {
+  margin-top: 0.75rem;
+}
+
+/* Make explanatory text readable */
+.chart-footnote {
+  margin-top: 0.75rem;
+  font-size: 1.0rem;
+  color: #fcfcfc;
+}
+
+/* Keep the smaller bar charts from stretching too wide on desktop */
+.chart-card.narrow {
+  max-width: 640px;
+}
+
+.chart-card.narrow .chart-container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Animated "pulse" along the ridership line */
+.ridership-glow-line path {
+  stroke-dasharray: 10 18;                 /* dash / gap lengths */
+  stroke-linecap: round;
+  animation: ridership-glow-dash 3.5s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.9));
+  opacity: 0.9;
+}
+
+@keyframes ridership-glow-dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -80;                /* how fast the dashes move */
+  }
+}
+
+.chart-card-wide {
+  grid-column: span 2;
+}
+
+/* Animated "pulse" along the metro population line */
+.metro-glow-line path {
+  stroke-dasharray: 10 18;                 /* dash / gap lengths */
+  stroke-linecap: round;
+  animation: metro-glow-dash 3.5s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.9)); /* purple glow */
+  opacity: 0.9;
+}
+
+@keyframes metro-glow-dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -80;
+  }
+}
+
